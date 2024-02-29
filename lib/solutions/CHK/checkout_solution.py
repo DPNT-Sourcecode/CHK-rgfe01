@@ -13,7 +13,7 @@ def checkout(skus):
         sku_count_map[sku] += 1
 
     total_price = 0
-    for sku in sku_count_map:
+    for sku in skus:
         if sku == 'A':
             if sku_count_map[sku] % 3 == 0:
                 sets = sku_count_map[sku] / 3
@@ -31,5 +31,6 @@ def checkout(skus):
 
 
     
+
 
 
