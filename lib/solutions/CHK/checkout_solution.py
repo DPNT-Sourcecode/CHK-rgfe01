@@ -22,26 +22,25 @@ def checkout(skus):
             if sku_count_map[sku] % 3 == 0:
                 sets = sku_count_map[sku] / 3
                 total_price += sets * 130
+                print(f'Just added {sets * 130}')
                 continue
 
         if sku == 'B':
             if sku_count_map[sku] % 2 == 0:
                 sets = sku_count_map[sku] / 2
                 total_price += sets * 45
+                print(f'Just added {sets * 45}')
                 continue
 
-            total_price += sku_count_map[sku] * sku_prices[sku]
+        total_price += sku_count_map[sku] * sku_prices[sku]
+        print(f'Just added {sets * 130}')
 
-    print(f'Total Prices are = {total_price}')
+    print(f'Total Prices are = {sku_count_map[sku] * sku_prices[sku]}')
 
     return total_price
 
 
-result = checkout("ABC")
+result = checkout("AAAAAABB")
 
 
     
-
-
-
-
