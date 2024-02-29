@@ -5,6 +5,3 @@
 def hello(friend_name):
     message = f'Hello, {friend_name}!'
     return message
-
-
-
