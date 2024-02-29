@@ -8,6 +8,7 @@ def checkout(skus):
 
     for sku in skus:
         if sku not in sku_count_map:
+            print(f'{sku} is not in sku maps')
             return -1
         
         sku_count_map[sku] += 1
@@ -21,19 +22,28 @@ def checkout(skus):
             if sku_count_map[sku] % 3 == 0:
                 sets = sku_count_map[sku] / 3
                 total_price += sets * 130
+                print(f'Just added {sets * 130}')
+
                 continue
 
         if sku == 'B':
             if sku_count_map[sku] % 2 == 0:
                 sets = sku_count_map[sku] / 2
                 total_price += sets * 45
+                print(f'Just added {sets * 45}')
                 continue
 
         total_price += sku_count_map[sku] * sku_prices[sku]
+        print(f'Just added {sku_count_map[sku] * sku_prices[sku]}')
+
+    print(f'Total Price is = {total_price}')
 
     return total_price
 
 
+result = checkout("AAAA")
+
 
     
+
 
