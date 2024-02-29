@@ -46,7 +46,9 @@ def checkout(skus):
 
             if sku in special_offers:
                 for offer in special_offers[sku]:
-                    if sku_count_map[sku] % offer[0] == 0:
+                    remainder = sku_count_map[sku] % offer
+                    if remainder == 0 or remainder in special_offers[sku]:
+                    # if sku_count_map[sku] % offer == 0 or (sku_count_map[sku] % offer) in special_offers[sku]:
                         num_of_orders = sku_count_map[sku] / offer[0]
                         total_price += num_of_orders * offer[1]
                         sku_count_map[sku] -= num_of_orders * offer[0]
@@ -70,3 +72,4 @@ result = checkout("AAAAAAAA")
 
 
     
+
