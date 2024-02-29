@@ -35,15 +35,18 @@ def checkout(skus):
         #         continue
 
         while sku_count_map[sku] > 0:
+            print(f'Current count is {sku_count_map[sku]}')
 
             if sku in special_offers:
                 if sku_count_map[sku] == special_offers[sku][0]:
                     total_price += special_offers[sku][1]
                     sku_count_map[sku] -= special_offers[sku][0]
+                    print(f'Just added {special_offers[sku][1]}')
 
             if sku_count_map[sku] > 0:
                 sku_count_map[sku] -= 1
-                total_price += sku_count_map[sku] * sku_prices[sku]
+                total_price += sku_prices[sku]
+                print(f'Just added {sku_prices[sku]}')
 
 
         # total_price += sku_count_map[sku] * sku_prices[sku]
@@ -54,10 +57,11 @@ def checkout(skus):
     return total_price
 
 
-result = checkout("AAAA")
+result = checkout("AAAABBBC")
 
 
     
+
 
 
 
