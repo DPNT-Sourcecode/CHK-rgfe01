@@ -51,9 +51,9 @@ def checkout(skus):
                         offer_quantity = offer if remainder == 0 else remainder
                         print(f'Offer quanitity is {offer_quantity}')
                         num_of_orders = sku_count_map[sku] / offer_quantity
-                        total_price += num_of_orders * offer[offer_quantity]
+                        total_price += num_of_orders * special_offers[sku][offer_quantity]
                         sku_count_map[sku] -= num_of_orders * offer_quantity
-                        print(f'Just added {num_of_orders * offer_quantity}')
+                        print(f'Just added {num_of_orders * special_offers[sku][offer_quantity]}')
 
             if sku_count_map[sku] > 0:
                 sku_count_map[sku] -= 1
@@ -73,6 +73,7 @@ result = checkout("AAAAAAAA")
 
 
     
+
 
 
 
