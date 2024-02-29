@@ -5,7 +5,7 @@
 def checkout(skus):
     sku_count_map = {'A': 0, 'B': 0, 'C': 0, 'D': 0, 'E': 0}
     sku_prices = {'A': 50, 'B': 30, 'C': 20, 'D': 15, 'E': 40}
-    special_offers = {'A': [[3, 130], [5, 200]], 'B': [[2, 45]]}
+    special_offers = {'A': {3: 130, 5: 200}, 'B': {2: 45}}
 
     for sku in skus:
         if sku not in sku_count_map:
@@ -70,7 +70,3 @@ result = checkout("AAAAAAAA")
 
 
     
-
-
-
-
